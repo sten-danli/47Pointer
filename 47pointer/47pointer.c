@@ -10,8 +10,30 @@ y= 0x20
 那么会输出
 y=0x12345678
 */
+//对变量取地址，取出的地址，就是一个指针，且常量指针。
+//常量指针，不是一个单纯的地址 + 而是由类型的。
+//指针的的本质是一个有类型的地址。类型决定了，从这个地址开始的寻址能力。
+int main()
+{
+	int data = 0X12345678;
+	
+	printf("%p\n", &data);				//取出变量data的地址》0095F750并加上0X 变成0X0095F750.
 
-int main() 
+	
+	printf("%x\n", *(&data));			 //取出变量地址里面的值.
+	printf("%x\n", *(char*)(&data));	
+	printf("%x\n", *(short*)(&data));
+	printf("%x\n", *(int*)(&data));
+
+
+	//printf("%d\n", *(int*)0X0095F750);
+
+
+}
+
+
+int main1() 
+
 {
 	char a = 'V'; short b = 2; int c = 10; double d = 123.45;
 
